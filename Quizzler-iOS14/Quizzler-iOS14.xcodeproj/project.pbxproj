@@ -12,6 +12,9 @@
 		48F9EA8424BFFD5900C8FD0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F9EA8324BFFD5900C8FD0F /* Assets.xcassets */; };
 		48F9EA8724BFFD5900C8FD0F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F9EA8624BFFD5900C8FD0F /* Preview Assets.xcassets */; };
 		48F9EA8F24BFFE5900C8FD0F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EA8E24BFFE5900C8FD0F /* ThemeManager.swift */; };
+		48F9EA9524C1192C00C8FD0F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EA9424C1192C00C8FD0F /* QuestionView.swift */; };
+		48F9EA9724C1197700C8FD0F /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EA9624C1197700C8FD0F /* Controls.swift */; };
+		48F9EA9924C119B200C8FD0F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EA9824C119B200C8FD0F /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		48F9EA8624BFFD5900C8FD0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48F9EA8824BFFD5900C8FD0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F9EA8E24BFFE5900C8FD0F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		48F9EA9424C1192C00C8FD0F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		48F9EA9624C1197700C8FD0F /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		48F9EA9824C119B200C8FD0F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				48F9EA8824BFFD5900C8FD0F /* Info.plist */,
 				48F9EA8524BFFD5900C8FD0F /* Preview Content */,
 				48F9EA8E24BFFE5900C8FD0F /* ThemeManager.swift */,
+				48F9EA9424C1192C00C8FD0F /* QuestionView.swift */,
+				48F9EA9624C1197700C8FD0F /* Controls.swift */,
+				48F9EA9824C119B200C8FD0F /* Question.swift */,
 			);
 			path = "Quizzler-iOS14";
 			sourceTree = "<group>";
@@ -141,7 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F9EA9524C1192C00C8FD0F /* QuestionView.swift in Sources */,
 				48F9EA8224BFFD5800C8FD0F /* ContentView.swift in Sources */,
+				48F9EA9724C1197700C8FD0F /* Controls.swift in Sources */,
+				48F9EA9924C119B200C8FD0F /* Question.swift in Sources */,
 				48F9EA8024BFFD5800C8FD0F /* Quizzler_iOS14App.swift in Sources */,
 				48F9EA8F24BFFE5900C8FD0F /* ThemeManager.swift in Sources */,
 			);
