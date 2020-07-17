@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct QuestionView: View{
+    @Binding var question: String
     var body: some View {
         VStack{
             HStack{
-                Text("Questionasdfasdfsadfsfd\nText")
+                Text(question)
                     .foregroundColor(.white)
+                    .padding(.leading, 10)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
             VStack(spacing: 5){
@@ -38,7 +40,8 @@ struct QuestionView: View{
 }
 
 struct QuestionView_Previews: PreviewProvider {
+    @State static var question: String = ""
     static var previews: some View {
-        QuestionView()
+        QuestionView(question: $question)
     }
 }

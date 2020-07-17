@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var question: String = ""
     var body: some View {
         ZStack{
            RoundedRectangle(cornerRadius: 10.0)
@@ -17,12 +18,16 @@ struct ContentView: View {
             
             VStack {
                 Spacer()
+                
                 Image("Background-Bubbles")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
              }
             
-            QuestionView()
+            QuestionView(question: $question)
+        }
+        .onAppear {
+            self.question = "Tow plus Four equals 6"
         }
     }
 }
