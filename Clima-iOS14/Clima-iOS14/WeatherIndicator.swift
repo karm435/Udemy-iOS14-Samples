@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct WeatherIndicator: View {
-    @Binding var weatherCondition: WeatherCondition
+    var weatherCondition: String
     var body: some View {
         HStack {
-            switch weatherCondition {
-            case .raining:
-                Image(systemName: "cloud.rain")
-                    .resizable()
-            case .sunny:
-                Image(systemName: "sun.max")
-                    .resizable()
-            case .cloudy:
-                Image(systemName: "cloud.fill")
-                    .resizable()
-            }
+            Image(systemName: weatherCondition)
+                .resizable()
         }
         .padding()
     }
@@ -32,8 +23,7 @@ enum WeatherCondition {
 }
 
 struct WeatherIndicator_Previews: PreviewProvider {
-    @State static var weatherCondition: WeatherCondition = .raining
     static var previews: some View {
-        WeatherIndicator(weatherCondition: $weatherCondition)
+        WeatherIndicator(weatherCondition: "cloud.rain")
     }
 }

@@ -10,6 +10,9 @@
 		484631F924C5034900EC594A /* WeatherIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484631F824C5034900EC594A /* WeatherIndicator.swift */; };
 		484631FB24C5085500EC594A /* TempratureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484631FA24C5085500EC594A /* TempratureView.swift */; };
 		484631FD24C50AE700EC594A /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484631FC24C50AE700EC594A /* ColorExtensions.swift */; };
+		4846320124C5474300EC594A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320024C5474300EC594A /* test.swift */; };
+		4846320324C556BC00EC594A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320224C556BC00EC594A /* WeatherViewModel.swift */; };
+		4846320524C798ED00EC594A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320424C798ED00EC594A /* WeatherModel.swift */; };
 		48F9EAAA24C1610100C8FD0F /* Clima_iOS14App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EAA924C1610100C8FD0F /* Clima_iOS14App.swift */; };
 		48F9EAAC24C1610100C8FD0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EAAB24C1610100C8FD0F /* ContentView.swift */; };
 		48F9EAAE24C1610200C8FD0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F9EAAD24C1610200C8FD0F /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 		484631F824C5034900EC594A /* WeatherIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIndicator.swift; sourceTree = "<group>"; };
 		484631FA24C5085500EC594A /* TempratureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempratureView.swift; sourceTree = "<group>"; };
 		484631FC24C50AE700EC594A /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		4846320024C5474300EC594A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		4846320224C556BC00EC594A /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		4846320424C798ED00EC594A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		48F9EAA624C1610100C8FD0F /* Clima-iOS14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clima-iOS14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F9EAA924C1610100C8FD0F /* Clima_iOS14App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_iOS14App.swift; sourceTree = "<group>"; };
 		48F9EAAB24C1610100C8FD0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				484631F824C5034900EC594A /* WeatherIndicator.swift */,
 				484631FA24C5085500EC594A /* TempratureView.swift */,
 				484631FC24C50AE700EC594A /* ColorExtensions.swift */,
+				4846320024C5474300EC594A /* test.swift */,
+				4846320224C556BC00EC594A /* WeatherViewModel.swift */,
+				4846320424C798ED00EC594A /* WeatherModel.swift */,
 			);
 			path = "Clima-iOS14";
 			sourceTree = "<group>";
@@ -152,10 +161,13 @@
 			files = (
 				48F9EAAC24C1610100C8FD0F /* ContentView.swift in Sources */,
 				48F9EAAA24C1610100C8FD0F /* Clima_iOS14App.swift in Sources */,
+				4846320324C556BC00EC594A /* WeatherViewModel.swift in Sources */,
 				484631F924C5034900EC594A /* WeatherIndicator.swift in Sources */,
+				4846320524C798ED00EC594A /* WeatherModel.swift in Sources */,
 				48F9EABD24C1680E00C8FD0F /* SearchBar.swift in Sources */,
 				484631FB24C5085500EC594A /* TempratureView.swift in Sources */,
 				484631FD24C50AE700EC594A /* ColorExtensions.swift in Sources */,
+				4846320124C5474300EC594A /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

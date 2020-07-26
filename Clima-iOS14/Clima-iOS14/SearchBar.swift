@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import os
 
 struct SearchBar: View {
-    @State var searchTerm: String = ""
+    @State var placeHolder: String = "Search"
+    @Binding var searchTerm: String
+    var action: () -> Void
+    
     var body: some View {
         HStack {
             Button(action: {}, label: {
@@ -18,29 +22,33 @@ struct SearchBar: View {
                     .foregroundColor(Color.label)
             })
             .frame(width: 40, height: 40, alignment: .leading)
-                
-            TextField("Search", text: $searchTerm)
-                .frame(height: 40, alignment: .trailing)
-                .padding(.leading, 10)
-                .background(RoundedRectangle(cornerRadius: 5.0, style: .continuous).fill(Color.systemFill))
-                
-            Button(action: {}, label: {
+           
+            TextField(placeHolder, text: $searchTerm, onCommit: action)
+            .frame(height: 40)
+            .padding(.trailing, 10)
+            .background(RoundedRectangle(cornerRadius: 5.0, style: .continuous).fill(Color.systemFill))
+            .autocapitalization(.words)
+            .keyboardType(.webSearch)
+            .multilineTextAlignment(.trailing)
+            
+            Button(action: action, label: {
                 Image(systemName: "magnifyingglass")
                     .resizable()
                     .padding(.all, 5)
                     .foregroundColor(Color.label)
             })
             .frame(width: 40, height: 40, alignment: .leading)
+           
         }
     }
 }
 
 struct SearchBar_Previews: PreviewProvider {
-    
+    @State static var searchTerm = ""
     static var previews: some View {
         Group {
-            SearchBar(searchTerm: "")
-            SearchBar(searchTerm: "")
+            SearchBar(searchTerm: $searchTerm){  }
+            SearchBar(searchTerm: $searchTerm){  }
                 .preferredColorScheme(.dark)
         }
     }

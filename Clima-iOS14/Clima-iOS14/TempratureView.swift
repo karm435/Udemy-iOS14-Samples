@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TempratureView: View {
-    @Binding var temprature: Int
+    var temprature: Double
     var body: some View {
         HStack(alignment: .top) {
             Text(temprature.description)
@@ -21,8 +21,8 @@ struct TempratureView: View {
 }
 
 struct TempratureView_Previews: PreviewProvider {
-    @State static var temprature: Int = 21
+    static var temprature: Double = 21.0
     static var previews: some View {
-        TempratureView(temprature: $temprature)
+        TempratureView(temprature: temprature)
     }
 }
