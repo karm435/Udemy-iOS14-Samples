@@ -66,7 +66,7 @@ private extension WeatherService {
         static let scheme = "https"
         static let host = "api.openweathermap.org"
         static let path = "/data/2.5"
-        static let key = "9c0370d70cdd5202335db3ede36a0045" // Check how to secure keys
+        static let key = "<Your key goes here>" 
     }
     
     func makeComponentsForCurrentDay(withCity city: String) -> URLComponents{
