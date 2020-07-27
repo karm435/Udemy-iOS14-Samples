@@ -27,7 +27,7 @@ struct ContentView: View {
                 .frame(width: UIScreen.main.bounds.width)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                SearchBar(searchTerm: $cityName, action:lookupWeather)
+                SearchBar(searchTerm: $cityName, action:lookupWeather, locationAction: lookupLocationWeather)
                 HStack{
                     Spacer()
                     WeatherIndicator(weatherCondition: self.weather.weatherModel.conditionName)
@@ -51,8 +51,13 @@ struct ContentView: View {
         .alert(isPresented: $emptySearchAlert) {
             Alert(title: Text("City"), message: Text("Enter city name"), dismissButton: .cancel())
         }
+        .onAppear(){
+            weather.getWeatherForCurrentLocation()
+        }
     }
-    
+    func lookupLocationWeather() {
+        weather.getWeatherForCurrentLocation()
+    }
     func lookupWeather(){
         guard cityName.count > 0 else {
             emptySearchAlert = true

@@ -11,6 +11,7 @@ import os
 
 protocol WeatherQuerable {
     func currentWeather(for city: String) -> AnyPublisher<CurrentWeatherResonse, WeatherError>
+    func currentWeather(_ latitude: Double, _ longitude: Double) -> AnyPublisher<CurrentWeatherResonse, WeatherError>
 }
 
 class WeatherService {
@@ -23,6 +24,10 @@ class WeatherService {
 }
 
 extension WeatherService : WeatherQuerable {
+    func currentWeather(_ latitude: Double, _ longitude: Double) -> AnyPublisher<CurrentWeatherResonse, WeatherError> {
+        getWeather(with: makeComponentsForCurrentDay(latitude: latitude, longitude: longitude))
+    }
+    
     func currentWeather(for city: String) -> AnyPublisher<CurrentWeatherResonse, WeatherError> {
         getWeather(with: makeComponentsForCurrentDay(withCity: city))
     }
@@ -34,7 +39,7 @@ extension WeatherService : WeatherQuerable {
             let error = WeatherError.network(description: "Could not create url")
             return Fail(error: error).eraseToAnyPublisher()
         }
-        
+        self.logger.debug("url: \(url)")
         return session
             .dataTaskPublisher(for: url)
             .tryMap { element -> Data in
@@ -66,7 +71,7 @@ private extension WeatherService {
         static let scheme = "https"
         static let host = "api.openweathermap.org"
         static let path = "/data/2.5"
-        static let key = "<Your key goes here>" 
+        static let key = "<Youe key here>" // Check how to secure keys
     }
     
     func makeComponentsForCurrentDay(withCity city: String) -> URLComponents{
@@ -77,6 +82,23 @@ private extension WeatherService {
         
         components.queryItems = [
             URLQueryItem(name: "q", value: city),
+            URLQueryItem(name: "mode", value: "json"),
+            URLQueryItem(name: "units", value: "metric"),
+            URLQueryItem(name: "appid", value: OpenWeatherMapAPI.key)
+        ]
+        
+        return components
+    }
+    
+    func makeComponentsForCurrentDay(latitude: Double, longitude: Double) -> URLComponents{
+            var components = URLComponents()
+        components.scheme = OpenWeatherMapAPI.scheme
+        components.host = OpenWeatherMapAPI.host
+        components.path = OpenWeatherMapAPI.path + "/weather"
+        
+        components.queryItems = [
+            URLQueryItem(name: "lat", value: String(latitude)),
+            URLQueryItem(name: "lon", value: String(longitude)),
             URLQueryItem(name: "mode", value: "json"),
             URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "appid", value: OpenWeatherMapAPI.key)

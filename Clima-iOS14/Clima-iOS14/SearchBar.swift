@@ -12,10 +12,11 @@ struct SearchBar: View {
     @State var placeHolder: String = "Search"
     @Binding var searchTerm: String
     var action: () -> Void
+    var locationAction: () -> Void
     
     var body: some View {
         HStack {
-            Button(action: {}, label: {
+            Button(action: locationAction, label: {
                 Image(systemName: "location.circle.fill")
                     .resizable()
                     .padding(.all, 5)
@@ -47,8 +48,8 @@ struct SearchBar_Previews: PreviewProvider {
     @State static var searchTerm = ""
     static var previews: some View {
         Group {
-            SearchBar(searchTerm: $searchTerm){  }
-            SearchBar(searchTerm: $searchTerm){  }
+            SearchBar(searchTerm: $searchTerm, action: {}, locationAction: {})
+            SearchBar(searchTerm: $searchTerm, action: {}, locationAction: {})
                 .preferredColorScheme(.dark)
         }
     }
