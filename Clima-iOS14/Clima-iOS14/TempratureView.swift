@@ -11,7 +11,7 @@ struct TempratureView: View {
     var temprature: Double
     var body: some View {
         HStack(alignment: .top) {
-            Text(temprature.description)
+            Text(String(format: "%.f", temprature))
                     .font(.system(size: 100, weight: .bold, design: .rounded))
             Text("℃")
                 .font(.system(size: 100, weight: .light, design: .rounded))

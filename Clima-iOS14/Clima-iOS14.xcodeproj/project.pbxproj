@@ -13,6 +13,9 @@
 		4846320124C5474300EC594A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320024C5474300EC594A /* test.swift */; };
 		4846320324C556BC00EC594A /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320224C556BC00EC594A /* WeatherViewModel.swift */; };
 		4846320524C798ED00EC594A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846320424C798ED00EC594A /* WeatherModel.swift */; };
+		48A14ACC24CE4EED00EA42C3 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14ACB24CE4EED00EA42C3 /* WeatherService.swift */; };
+		48A14ACE24CE4FA800EA42C3 /* WeatherServiceResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14ACD24CE4FA800EA42C3 /* WeatherServiceResponses.swift */; };
+		48A14AD024CE50B200EA42C3 /* WeatherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14ACF24CE50B200EA42C3 /* WeatherError.swift */; };
 		48F9EAAA24C1610100C8FD0F /* Clima_iOS14App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EAA924C1610100C8FD0F /* Clima_iOS14App.swift */; };
 		48F9EAAC24C1610100C8FD0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F9EAAB24C1610100C8FD0F /* ContentView.swift */; };
 		48F9EAAE24C1610200C8FD0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F9EAAD24C1610200C8FD0F /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 		4846320024C5474300EC594A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		4846320224C556BC00EC594A /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		4846320424C798ED00EC594A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		48A14ACB24CE4EED00EA42C3 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		48A14ACD24CE4FA800EA42C3 /* WeatherServiceResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceResponses.swift; sourceTree = "<group>"; };
+		48A14ACF24CE50B200EA42C3 /* WeatherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherError.swift; sourceTree = "<group>"; };
 		48F9EAA624C1610100C8FD0F /* Clima-iOS14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clima-iOS14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F9EAA924C1610100C8FD0F /* Clima_iOS14App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_iOS14App.swift; sourceTree = "<group>"; };
 		48F9EAAB24C1610100C8FD0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +53,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48A14ACA24CE4ED500EA42C3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48A14ACB24CE4EED00EA42C3 /* WeatherService.swift */,
+				48A14ACD24CE4FA800EA42C3 /* WeatherServiceResponses.swift */,
+				48A14ACF24CE50B200EA42C3 /* WeatherError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		48F9EA9D24C1610100C8FD0F = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +82,7 @@
 		48F9EAA824C1610100C8FD0F /* Clima-iOS14 */ = {
 			isa = PBXGroup;
 			children = (
+				48A14ACA24CE4ED500EA42C3 /* Services */,
 				48F9EAA924C1610100C8FD0F /* Clima_iOS14App.swift */,
 				48F9EAAB24C1610100C8FD0F /* ContentView.swift */,
 				48F9EAAD24C1610200C8FD0F /* Assets.xcassets */,
@@ -159,11 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A14ACC24CE4EED00EA42C3 /* WeatherService.swift in Sources */,
 				48F9EAAC24C1610100C8FD0F /* ContentView.swift in Sources */,
+				48A14ACE24CE4FA800EA42C3 /* WeatherServiceResponses.swift in Sources */,
 				48F9EAAA24C1610100C8FD0F /* Clima_iOS14App.swift in Sources */,
 				4846320324C556BC00EC594A /* WeatherViewModel.swift in Sources */,
 				484631F924C5034900EC594A /* WeatherIndicator.swift in Sources */,
 				4846320524C798ED00EC594A /* WeatherModel.swift in Sources */,
+				48A14AD024CE50B200EA42C3 /* WeatherError.swift in Sources */,
 				48F9EABD24C1680E00C8FD0F /* SearchBar.swift in Sources */,
 				484631FB24C5085500EC594A /* TempratureView.swift in Sources */,
 				484631FD24C50AE700EC594A /* ColorExtensions.swift in Sources */,

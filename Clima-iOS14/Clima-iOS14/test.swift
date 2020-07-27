@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct test: View {
-    @ObservedObject var weatherViewModel = WeatherViewModel()
+    @ObservedObject var weatherViewModel = WeatherViewModel(weatherService: WeatherService())
     @State var city: String
     var body: some View {
         VStack {

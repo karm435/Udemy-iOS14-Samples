@@ -9,13 +9,15 @@ import SwiftUI
 import os
 
 struct ContentView: View {
-    @ObservedObject var weather = WeatherViewModel()
     let logger = Logger(subsystem: "com.KarmjitSingh.Clima", category: "main")
-    
+
+    @ObservedObject var weather: WeatherViewModel
     @State var cityName: String = ""
-    @State var weatherCondition: WeatherCondition = .raining
-    @State var temprature: Int = 21
     @State var emptySearchAlert = false
+    
+    init(weatherViewModel: WeatherViewModel) {
+        self.weather = weatherViewModel
+    }
     
     var body: some View {
         ZStack {
@@ -64,15 +66,12 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @State static var weatherCondition: WeatherCondition = .raining
-    @State static var temprature: Int = 21
-    @State static var cityName: String = ""
+    static let weatherService = WeatherService()
     static var previews: some View {
         Group {
-            ContentView(cityName: cityName, weatherCondition: weatherCondition, temprature: temprature)
-            ContentView(cityName: cityName, weatherCondition: weatherCondition, temprature: temprature)
-                .preferredColorScheme(.dark)
-            ContentView(cityName: cityName, weatherCondition: weatherCondition, temprature: temprature)
+            ContentView(weatherViewModel: WeatherViewModel(weatherService: weatherService))
+            ContentView(weatherViewModel: WeatherViewModel(weatherService: weatherService))     .preferredColorScheme(.dark)
+            ContentView(weatherViewModel: WeatherViewModel(weatherService: weatherService))
                 .previewDevice("iPad Pro (12.9-inch) (4th generation)")
                 .preferredColorScheme(.dark)
         }

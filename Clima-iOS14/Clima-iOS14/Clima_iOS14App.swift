@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Clima_iOS14App: App {
+    let weatherService = WeatherService()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(weatherViewModel: WeatherViewModel(weatherService: self.weatherService))
         }
     }
 }

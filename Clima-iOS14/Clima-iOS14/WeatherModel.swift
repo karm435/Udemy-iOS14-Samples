@@ -18,10 +18,6 @@ class WeatherModel : ObservableObject {
         temprature = temp;
     }
     
-    func setCity(to cityName: String){
-        self.cityName = cityName
-    }
-    
     static var defaultWeather: WeatherModel {
         WeatherModel(id: 0, city: "", temp: 0.0)
     }
