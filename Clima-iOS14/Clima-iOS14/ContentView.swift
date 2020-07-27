@@ -66,7 +66,6 @@ struct ContentView: View {
         
         // Get the weather
         weather.getWeather(for: cityName)
-        //cityName = ""
     }
 }
 
