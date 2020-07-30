@@ -1,0 +1,7 @@
+platform :ios, '14.0'
+
+target 'Flash-Chat-iOS14' do
+  # Pods for Flash-Chat-iOS14
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore' 
+end
