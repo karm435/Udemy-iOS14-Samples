@@ -12,3 +12,7 @@ Migration of Udemy iOS 13 Course to SwiftUI.
 ## Not done
 - There is no validation of the email id paramter. Need to add validations for Email and Passwords. 
 
+## want to do
+- Add MVVM 
+
+
