@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LaunchView: View {
     @State private var selection: String? = nil
+    @EnvironmentObject private var model: ChatModel
     
     var body: some View {
-        
             ZStack {
                 Background()
                 VStack{
@@ -44,11 +44,13 @@ struct LaunchView: View {
                             }
                             .foregroundColor(.white)
                             .buttonStyle(BorderedButton(backgroundColor: Color(UIColor.systemTeal)))
+                            .accessibility(label: Text("Login"))
                             
                             Button("Register"){
                                 selection = "register"
                             }.foregroundColor(.white)
                             .buttonStyle(BorderedButton(backgroundColor: Color(UIColor.systemOrange)))
+                            .accessibility(label: Text("Register"))
                         }
                         .padding()
                     }

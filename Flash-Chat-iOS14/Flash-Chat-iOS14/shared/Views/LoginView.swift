@@ -7,11 +7,14 @@
 
 import SwiftUI
 import Firebase
+import Combine
 
 struct LoginView: View {
     @State var emailId: String = ""
     @State var password: String = ""
     @State var loginSuccessFull = false
+    @EnvironmentObject private var model: ChatModel
+    @State private var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
         ZStack {
@@ -20,8 +23,10 @@ struct LoginView: View {
                 VStack {
                     TextField("Email Id", text: $emailId)
                         .textFieldStyle(CustomTextFieldStyle())
+                        .accessibility(label: Text("Email Id"))
                     SecureField("Password", text: $password)
                         .textFieldStyle(CustomTextFieldStyle())
+                        .accessibility(label: Text("Password"))
                     Spacer()
                 }
                 .navigationTitle("Login")
@@ -33,15 +38,11 @@ struct LoginView: View {
                         isActive: $loginSuccessFull
                     ){ EmptyView()}
                     Button("Login"){
-                        Auth.auth().signIn(withEmail: emailId, password: password) { authResult, error in
-                            if let e = error {
-                                print(e.localizedDescription)
-                            } else {
-                                print(authResult ?? "")
-                                loginSuccessFull = true
-                            }
-                            // ...
-                        }
+                        model.login(emailId: emailId, password: password)
+                            .assertNoFailure()
+                            .receive(on: RunLoop.main)
+                            .assign(to: \.loginSuccessFull, on: self)
+                            .store(in: &cancellables)
                     }.foregroundColor(.white)
                     .padding()
                     .buttonStyle(BorderedButton(backgroundColor: Color(UIColor.blue)))

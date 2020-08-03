@@ -10,7 +10,8 @@ import Firebase
 
 struct ContentView: View {
     @State private var selection: String? = nil
-   
+    @EnvironmentObject private var model: ChatModel
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -25,7 +26,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            if Auth.auth().currentUser != nil {
+            if model.hasAccount {
                selection = "ChatView"
             }
             else {

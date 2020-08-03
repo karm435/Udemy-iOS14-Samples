@@ -19,6 +19,12 @@
 		48A14AF524D269E600EA42C3 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14AF424D269E600EA42C3 /* ChatView.swift */; };
 		48A14AF724D26F3E00EA42C3 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14AF624D26F3E00EA42C3 /* BorderedButton.swift */; };
 		48A14AFA24D2993D00EA42C3 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14AF924D2993D00EA42C3 /* CustomTextFieldStyle.swift */; };
+		48A14B0624D77E3200EA42C3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A14B0524D77E3200EA42C3 /* WidgetKit.framework */; };
+		48A14B0824D77E4300EA42C3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A14B0724D77E4300EA42C3 /* SwiftUI.framework */; };
+		48A14B0A24D77E5E00EA42C3 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14B0924D77E5E00EA42C3 /* ChatModel.swift */; };
+		48A14B0D24D77F1C00EA42C3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14B0C24D77F1C00EA42C3 /* Account.swift */; };
+		48A14B0F24D77F2600EA42C3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14B0E24D77F2600EA42C3 /* Message.swift */; };
+		48A14B1324D7B5AD00EA42C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A14B1224D7B5AC00EA42C3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		48A14AF424D269E600EA42C3 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		48A14AF624D26F3E00EA42C3 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		48A14AF924D2993D00EA42C3 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		48A14B0524D77E3200EA42C3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		48A14B0724D77E4300EA42C3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		48A14B0924D77E5E00EA42C3 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		48A14B0C24D77F1C00EA42C3 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		48A14B0E24D77F2600EA42C3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		48A14B1224D7B5AC00EA42C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F7FD77C947B05232C947596 /* Pods-Flash-Chat-iOS14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash-Chat-iOS14.release.xcconfig"; path = "Target Support Files/Pods-Flash-Chat-iOS14/Pods-Flash-Chat-iOS14.release.xcconfig"; sourceTree = "<group>"; };
 		94195C0FC0E46A62D8E2FFC9 /* Pods-Flash-Chat-iOS14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash-Chat-iOS14.debug.xcconfig"; path = "Target Support Files/Pods-Flash-Chat-iOS14/Pods-Flash-Chat-iOS14.debug.xcconfig"; sourceTree = "<group>"; };
 		BAED827EF79CF7671236EE46 /* libPods-Flash-Chat-iOS14.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flash-Chat-iOS14.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +58,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20805DEB2D0548E25CFDEB1A /* libPods-Flash-Chat-iOS14.a in Frameworks */,
+				48A14B0824D77E4300EA42C3 /* SwiftUI.framework in Frameworks */,
+				48A14B0624D77E3200EA42C3 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,13 +87,9 @@
 		48A14ADC24CE9D8900EA42C3 /* Flash-Chat-iOS14 */ = {
 			isa = PBXGroup;
 			children = (
+				48A14B0B24D77E6E00EA42C3 /* shared */,
 				48A14AF824D2991A00EA42C3 /* CustomStyles */,
 				48A14ADD24CE9D8900EA42C3 /* Flash_Chat_iOS14App.swift */,
-				48A14ADF24CE9D8900EA42C3 /* ContentView.swift */,
-				48A14AEE24D269BA00EA42C3 /* LaunchView.swift */,
-				48A14AF024D269CF00EA42C3 /* RegisterView.swift */,
-				48A14AF224D269DD00EA42C3 /* LoginView.swift */,
-				48A14AF424D269E600EA42C3 /* ChatView.swift */,
 				48A14AE124CE9D8900EA42C3 /* Assets.xcassets */,
 				48A14AE624CE9D8900EA42C3 /* Info.plist */,
 				48A14AEC24D2509F00EA42C3 /* GoogleService-Info.plist */,
@@ -105,6 +115,46 @@
 			path = CustomStyles;
 			sourceTree = "<group>";
 		};
+		48A14AFB24D77D8C00EA42C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48A14B0924D77E5E00EA42C3 /* ChatModel.swift */,
+				48A14B0C24D77F1C00EA42C3 /* Account.swift */,
+				48A14B0E24D77F2600EA42C3 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48A14AFC24D77D9400EA42C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48A14AFD24D77D9F00EA42C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48A14ADF24CE9D8900EA42C3 /* ContentView.swift */,
+				48A14AEE24D269BA00EA42C3 /* LaunchView.swift */,
+				48A14AF024D269CF00EA42C3 /* RegisterView.swift */,
+				48A14AF224D269DD00EA42C3 /* LoginView.swift */,
+				48A14AF424D269E600EA42C3 /* ChatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48A14B0B24D77E6E00EA42C3 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				48A14AFD24D77D9F00EA42C3 /* Views */,
+				48A14AFC24D77D9400EA42C3 /* ViewModels */,
+				48A14AFB24D77D8C00EA42C3 /* Models */,
+				48A14B1224D7B5AC00EA42C3 /* Constants.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
 		868436631BB5A135FEC02CBA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +167,8 @@
 		F662D47D1166F9F40EB43261 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48A14B0724D77E4300EA42C3 /* SwiftUI.framework */,
+				48A14B0524D77E3200EA42C3 /* WidgetKit.framework */,
 				BAED827EF79CF7671236EE46 /* libPods-Flash-Chat-iOS14.a */,
 			);
 			name = Frameworks;
@@ -241,9 +293,13 @@
 				48A14AFA24D2993D00EA42C3 /* CustomTextFieldStyle.swift in Sources */,
 				48A14AEF24D269BA00EA42C3 /* LaunchView.swift in Sources */,
 				48A14AF324D269DD00EA42C3 /* LoginView.swift in Sources */,
+				48A14B0D24D77F1C00EA42C3 /* Account.swift in Sources */,
+				48A14B0F24D77F2600EA42C3 /* Message.swift in Sources */,
 				48A14AF524D269E600EA42C3 /* ChatView.swift in Sources */,
 				48A14ADE24CE9D8900EA42C3 /* Flash_Chat_iOS14App.swift in Sources */,
+				48A14B0A24D77E5E00EA42C3 /* ChatModel.swift in Sources */,
 				48A14AF724D26F3E00EA42C3 /* BorderedButton.swift in Sources */,
+				48A14B1324D7B5AD00EA42C3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +430,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Flash-Chat-iOS14/Preview Content\"";
+				DEVELOPMENT_TEAM = YN278H5GS2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Flash-Chat-iOS14/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -396,6 +453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Flash-Chat-iOS14/Preview Content\"";
+				DEVELOPMENT_TEAM = YN278H5GS2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Flash-Chat-iOS14/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
