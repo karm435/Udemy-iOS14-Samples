@@ -1,6 +1,13 @@
 # Flash Chat
 Migration of Udemy iOS 13 Course to SwiftUI. 
 
+## Technologies
+- SwiftUI 2
+- Swift 5
+- Firebase
+- FireStore
+- Combine
+
 ## Pre-requisites
 - Create firebase account using google accont and create a new project
 - Register the app with the new project. Note: change the app identifier before you register the app
@@ -12,7 +19,18 @@ Migration of Udemy iOS 13 Course to SwiftUI.
 ## Not done
 - There is no validation of the email id paramter. Need to add validations for Email and Passwords. 
 
-## want to do
-- Add MVVM 
+## Completed
+- register
+- login
+- logout
+
+## dev path
+- Show contacts list
+- Send and recieve messages
+- Delete account
+- remove friends
+- send images
+- send videos
+- create Rooms
 
 
