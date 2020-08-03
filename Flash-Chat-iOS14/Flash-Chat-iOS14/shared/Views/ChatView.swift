@@ -11,6 +11,7 @@ import Combine
 
 struct ChatView: View {
     @State var successfullyLoggedOut = false
+    
     @EnvironmentObject private var model: ChatModel
     @State private var message: String = ""
     @State private var cancellables: Set<AnyCancellable> = []
@@ -27,6 +28,17 @@ struct ChatView: View {
         }
         
         VStack {
+            VStack{
+                
+                Text("Today")
+                    .font(.subheadline)
+                
+                if !model.hasMessages {
+                    Text("This is starting of the conversation.")
+                        .font(.caption)
+                }
+            }
+            
             List {
                 if let messages = model.messages {
                     ForEach(messages, id:\.id){ message in
@@ -34,22 +46,43 @@ struct ChatView: View {
                     }
                 }
             }
+            
             Spacer()
+            HStack {
+                
+                TextField("Message", text: $message)
+                    .textFieldStyle(CustomTextFieldStyle(maxHeight: 10))
+                    .padding(.trailing)
+                Button(action: {
+                    send(message: message)
+                }, label: {
+                    Image(systemName: "paperplane.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .trailing)
+                })
+            }
+            .padding()
             
         }
         
         .navigationBarTitle("Chat")
         .navigationBarItems(trailing: logoutButton)
         .navigationBarBackButtonHidden(true)
-        .toolbar(items: {
-            ToolbarItem(placement: .bottomBar) {
-                TextField("message", text: $message)
-            }
-        })
     }
 }
 
 extension ChatView {
+    private func send(message: String) {
+        model.send(message: message)
+            .assertNoFailure()
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: {value in
+                if value {
+                    self.message = ""
+                }
+            })
+            .store(in: &cancellables)
+    }
     private func logout() {
         model.logout()
             .assertNoFailure()

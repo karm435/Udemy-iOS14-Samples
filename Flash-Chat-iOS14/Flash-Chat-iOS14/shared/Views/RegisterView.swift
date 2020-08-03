@@ -20,8 +20,6 @@ struct RegisterView: View {
         ZStack {
             Background()
             VStack {
-                
-                
                 VStack {
                     TextField("Email Id", text: $emailId)
                         .textFieldStyle(CustomTextFieldStyle())
@@ -33,7 +31,9 @@ struct RegisterView: View {
                 }
                 .navigationTitle("Register")
                 .padding()
+                
                 Spacer()
+                
                 VStack {
                     NavigationLink(
                         destination: ChatView(),

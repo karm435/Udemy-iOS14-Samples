@@ -30,6 +30,13 @@ class ChatModel: ObservableObject {
         #endif
     }
     
+    var hasMessages: Bool {
+        if let messages = messages {
+            return messages.count > 0
+        }
+        return false
+    }
+    
     var db : Firestore {
         Firestore.firestore()
     }
@@ -90,10 +97,10 @@ extension ChatModel {
         .eraseToAnyPublisher()
     }
     
-    func createMessage(message: Message) -> AnyPublisher<Bool, Error>{
+    func send(message: String) -> AnyPublisher<Bool, Error>{
         Future<Bool, Error> { promise in
             self.db.collection(Constants.FStore.dbCollectionName)
-                .addDocument(data: ["message": message.body, "sender": self.account!.emailId]) { err in
+                .addDocument(data: ["message": message, "sender": self.account!.emailId]) { err in
                     if let error = err {
                         self.logger.critical("\(error.localizedDescription)")
                         return promise(.failure(error))
